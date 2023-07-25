@@ -1,0 +1,28 @@
+.principal-container__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0;
+}
+.principal-container__header .left-side__header, .principal-container__header .right-side__header, .principal-container__header .mid-side__header {
+  flex: 1;
+}
+.principal-container__header .left-side__header h3 {
+  font-size: 1rem;
+}
+.principal-container__header .left-side__header h3:hover {
+  cursor: pointer;
+}
+.principal-container__header .mid-side__header {
+  width: 100%;
+}
+.principal-container__header .mid-side__header h1 {
+  text-align: center;
+  font-size: 1.25rem;
+}
+.principal-container__header .right-side__header {
+  display: flex;
+  gap: 24px;
+  justify-content: end;
+}/*# sourceMappingURL=styles.css.map */
