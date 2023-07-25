@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './styles.css';
-import { Link } from 'react-router-dom';
 
 export const Categories = () => {
     const [data, setData] = useState<[]>([]);
@@ -21,7 +20,7 @@ export const Categories = () => {
                 data && <div className="categories-container__top">
                     {data.map((item, index) => {
                         return <>
-                            <div className="category-circle">
+                            <div className="category-circle" key={index}>
                             <div className="circle"></div>
                                 <p>{item}</p>
                             </div>
