@@ -19,12 +19,12 @@ export const Categories = () => {
             {
                 data && <div className="categories-container__top">
                     {data.map((item, index) => {
-                        return <>
-                            <div className="category-circle" key={index}>
+                        return <div key={index}>
+                            <div className="category-circle" >
                             <div className="circle"></div>
                                 <p>{item}</p>
                             </div>
-                        </>
+                        </div>
                     })}
                 </div>
             }

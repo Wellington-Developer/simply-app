@@ -21,9 +21,9 @@ export const Menu = () => {
         data && <>
           <ul>
             {data.map((item, index) => {
-              return <>
-                <li key={index}>{item}</li>
-              </>
+              return <div key={index}>
+                <li >{item}</li>
+              </div>
             })}
           </ul>
         </>

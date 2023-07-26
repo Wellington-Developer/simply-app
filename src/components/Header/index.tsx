@@ -5,7 +5,7 @@ import './styles.css';
 import { useState, useEffect } from "react";
 
 // React Icons
-import { BiSearch, BiCartAlt } from 'react-icons/bi';
+import { BiCartAlt } from 'react-icons/bi';
 
 // Framer Motion
 import { motion } from 'framer-motion';
@@ -14,6 +14,7 @@ import { useAnimate, stagger } from "framer-motion";
 // React Components
 import { Menu } from './utils/Menu/Menu';
 import { MenuToggle } from './utils/MenuToggle';
+import { Cart } from '../Cart';
 
 
 function useMenuAnimation(isOpen: boolean) {
@@ -63,10 +64,17 @@ function useMenuAnimation(isOpen: boolean) {
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const scope = useMenuAnimation(isOpen);
 
+    const handleModalIsOpen = () => {
+      setModalIsOpen(!modalIsOpen);
+      console.log(modalIsOpen)
+    }
+
     return (
-        <div className="principal-container__header">
+        <>
+          <div className="principal-container__header">
             <div className="left-side__header">
                 <div ref={scope}>
                     <Menu />
@@ -87,9 +95,14 @@ export const Header = () => {
                 </motion.div>
             </div>
             <div className="right-side__header">
-                <BiSearch />
-                <BiCartAlt />
+              <div className="right-icon__header">
+                <BiCartAlt onClick={ handleModalIsOpen }/>
+              </div>
             </div>
         </div>
+        {
+          modalIsOpen && <Cart modal={ handleModalIsOpen }/>
+        }
+        </>
     )
 }
