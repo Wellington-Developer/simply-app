@@ -24,9 +24,9 @@ export const BannerContainer = () => {
     return (
         <div className="principal-container__banner" >
             <div className="banners" ref={ carousel }>
-                <Banner image="https://images.alphacoders.com/111/thumb-1920-1113834.png"/>
+                <Banner image="https://casamobilia.simply.app.br/arquivo_back/9155/banner/5399d3b4e1c769b23e4caa9f5b0917f820230721174635.webp"/>
 
-                <Banner image="https://images.alphacoders.com/111/thumb-1920-1113834.png"/>
+                <Banner image="https://casamobilia.simply.app.br/arquivo_back/9155/banner/fb3118396607bf3d70271ee61a5b6dd720230721174610.webp"/>
             </div>
             <div className="button-product__banner">
                 <button onClick={ handleLeftClick }><AiOutlineArrowLeft /></button>
