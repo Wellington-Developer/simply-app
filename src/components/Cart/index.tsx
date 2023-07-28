@@ -1,11 +1,16 @@
 // Styles
+import { useContext } from 'react';
 import { Input } from './Utils/Input';
 import './styles.css';
 
 // React Icons
 import { BiX } from 'react-icons/bi';
+import { GlobalContext } from '../context/GlobalContext';
+import { ProductCart } from './Utils/ProductCart';
 
 export const Cart = ({ modal } : any) => {
+  const {cart} = useContext(GlobalContext);
+
   return (
     <div className="section-side__cart">
       <div className="content-side__cart">
@@ -38,7 +43,16 @@ export const Cart = ({ modal } : any) => {
           <div className="product-container__cart">
             <h3>Resumo do pedido</h3>
             <div className="product-content__cart">
-              
+              {
+                cart ?
+                (
+                  cart.map((product) => {
+                    return <ProductCart title={product.title} image={product.image} id={product.id} price={product.price} />
+                  })
+                ) : (
+                  <h3>Adicione produtos ao carrinho.</h3>
+                )
+              }
             </div>
           </div>
           <div className="product-discount__cart">

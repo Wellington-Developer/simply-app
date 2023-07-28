@@ -1,12 +1,37 @@
 // Styles
+import { useContext } from 'react';
 import './styles.css';
 
-export const Product = () => {
+// React Icons
+import { BiCartAdd } from 'react-icons/bi';
+import { GlobalContext } from '../context/GlobalContext';
+
+type IProduct = {
+  image: string,
+  title: string,
+  price: number,
+  id?: number
+}
+
+export const Product = ({ title, price, image, id }: IProduct) => {
+  const { setProductToCart } = useContext(GlobalContext);
+
   return (
     <div className="container-single__product">
       <div className="content-single__product">
         <div className="container-image__product">
-          <img src="https://images.unsplash.com/photo-1632452024489-ffffa7ef89ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" />
+          <img src={image} alt={title} />
+        </div>
+
+        <div className="container-info__product">
+          <div className="info-product">
+            <p>{title}</p>
+            <h2>R$ {price}</h2>
+          </div>
+
+          <div className="add-to__cart" onClick={ () => setProductToCart(id) }>
+            <BiCartAdd/>
+          </div>
         </div>
       </div>
     </div>

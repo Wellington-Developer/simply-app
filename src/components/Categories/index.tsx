@@ -1,24 +1,21 @@
-import { useEffect, useState } from 'react';
+// Styles
 import './styles.css';
 
+// React Hooks
+import { useContext } from 'react';
+
+// React Context Components
+import { GlobalContext } from '../context/GlobalContext';
+
+
 export const Categories = () => {
-    const [data, setData] = useState<[]>([]);
-
-    const searchCategories = () => {
-        fetch('https://fakestoreapi.com/products/categories')
-        .then(r => r.json())
-        .then(newResponse => setData(newResponse))
-    }
-
-    useEffect(() => {
-        searchCategories()
-    }, [])
+    const global = useContext(GlobalContext);
 
     return (
         <div className="categories">
             {
-                data && <div className="categories-container__top">
-                    {data.map((item, index) => {
+                global.allCategories && <div className="categories-container__top">
+                    {global.allCategories.map((item, index) => {
                         return <div key={index}>
                             <div className="category-circle" >
                             <div className="circle"></div>

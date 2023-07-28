@@ -11,9 +11,10 @@
   justify-content: center;
 }
 .section-side__cart .content-side__cart {
-  width: 95vw;
+  max-width: 1162px;
+  width: 100%;
   display: flex;
-  gap: 24px;
+  gap: 48px;
   position: relative;
 }
 .section-side__cart .content-side__cart .content-close__cart {
@@ -46,7 +47,6 @@
 .section-side__cart .content-side__cart .left-side__cart, .section-side__cart .content-side__cart .right-side__cart {
   flex: 1;
   height: 100%;
-  border: 1px solid red;
 }
 .section-side__cart .content-side__cart .left-side__cart .form {
   padding-bottom: 48px;

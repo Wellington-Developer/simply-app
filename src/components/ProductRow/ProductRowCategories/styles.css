@@ -1,0 +1,9 @@
+.product-category__row h1 {
+  font-size: 32px;
+  padding-bottom: 24px;
+  color: var(--black-color-o6);
+  font-weight: 600;
+}
+.product-category__row .product-content__row {
+  position: relative;
+}/*# sourceMappingURL=styles.css.map */

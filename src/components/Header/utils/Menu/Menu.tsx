@@ -1,26 +1,17 @@
 // Styles
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import './styles.css'
+import { GlobalContext } from '../../../context/GlobalContext';
 
 export const Menu = () => {
-  const [data, setData] = useState<[]>([]);
-
-  const searchCategories = () => {
-      fetch('https://fakestoreapi.com/products/categories')
-      .then(r => r.json())
-      .then(newResponse => setData(newResponse))
-  }
-
-  useEffect(() => {
-    searchCategories()
-  }, [])
+  const global = useContext(GlobalContext);
 
   return (
     <nav className="menu">
       {
-        data && <>
+        global.allCategories && <>
           <ul>
-            {data.map((item, index) => {
+            {global.allCategories.map((item, index) => {
               return <div key={index}>
                 <li >{item}</li>
               </div>
