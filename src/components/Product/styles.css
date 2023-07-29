@@ -1,6 +1,3 @@
-.container-single__product {
-  max-width: 600px;
-}
 .container-single__product .content-single__product .container-image__product {
   width: 100%;
   position: relative;
@@ -9,8 +6,7 @@
 }
 .container-single__product .content-single__product .container-image__product img {
   width: 100%;
-  max-width: 300px;
-  height: 500px;
+  height: 100%;
   transition: all 0.5s;
   -o-object-fit: cover;
      object-fit: cover;

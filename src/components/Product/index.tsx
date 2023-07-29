@@ -14,12 +14,17 @@ type IProduct = {
 }
 
 export const Product = ({ title, price, image, id }: IProduct) => {
-  const { setProductToCart } = useContext(GlobalContext);
+  const { setProductToCart, refWidth } = useContext(GlobalContext);
+  const widthRecalculedImage = ((refWidth - 72) / 3)
+  const style = {
+    maxWidth: Number(widthRecalculedImage), 
+    height: Number(widthRecalculedImage + 200),
+  }
 
   return (
-    <div className="container-single__product">
+    <div className="container-single__product" >
       <div className="content-single__product">
-        <div className="container-image__product">
+        <div className="container-image__product" style={ style }>
           <img src={image} alt={title} />
         </div>
 

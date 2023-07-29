@@ -15,6 +15,7 @@ import { useAnimate, stagger } from "framer-motion";
 import { Menu } from './utils/Menu/Menu';
 import { MenuToggle } from './utils/MenuToggle';
 import { Cart } from '../Cart';
+import { Link } from 'react-router-dom';
 
 
 function useMenuAnimation(isOpen: boolean) {
@@ -91,7 +92,9 @@ export const Header = () => {
                   ease: [0, 0.71, 0.2, 1.01]
                 }}
             >
-                <h1>Simply</h1>
+                <Link to="/">
+                  <h1>Simply</h1>
+                </Link>
                 </motion.div>
             </div>
             <div className="right-side__header">

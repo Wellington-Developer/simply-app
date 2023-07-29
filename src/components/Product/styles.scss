@@ -1,5 +1,4 @@
 .container-single__product {
-  max-width: 600px;
   
   .content-single__product {
     .container-image__product {
@@ -10,8 +9,7 @@
       
       img {
         width: 100%;
-        max-width: 300px;
-        height: 500px;
+        height: 100%;
         -moz-transition: all 0.5s;
         -webkit-transition: all 0.5s;
         transition: all 0.5s;

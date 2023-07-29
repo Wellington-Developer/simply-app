@@ -6,6 +6,7 @@ import { useContext } from 'react';
 
 // React Context Components
 import { GlobalContext } from '../context/GlobalContext';
+import { Link } from 'react-router-dom';
 
 
 export const Categories = () => {
@@ -17,10 +18,12 @@ export const Categories = () => {
                 global.allCategories && <div className="categories-container__top">
                     {global.allCategories.map((item, index) => {
                         return <div key={index}>
-                            <div className="category-circle" >
-                            <div className="circle"></div>
-                                <p>{item}</p>
-                            </div>
+                                <Link to={`/category/${item}`}>
+                                    <div className="category-circle" >
+                                    <div className="circle"></div>
+                                            <p>{item}</p>
+                                    </div>
+                                </Link>
                         </div>
                     })}
                 </div>

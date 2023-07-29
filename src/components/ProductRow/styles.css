@@ -16,6 +16,7 @@
   height: 100%;
   position: absolute;
   top: 0;
+  padding: 0 30px;
 }
 .product-container__row .container-button button {
   padding: 12px;
@@ -35,4 +36,19 @@
 }
 .product-container__row .container-button button:hover svg {
   color: var(--primary-color-o2);
+}
+
+@media screen and (max-width: 800px) {
+  .product-container__row {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 80px;
+    overflow-x: scroll;
+  }
+  .product-container__row .product-content__row {
+    flex-shrink: 0;
+  }
+  .product-container__row .container-button {
+    display: none;
+  }
 }/*# sourceMappingURL=styles.css.map */

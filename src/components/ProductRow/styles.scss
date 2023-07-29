@@ -17,6 +17,7 @@
     height: 100%;
     position: absolute;
     top: 0;
+    padding: 0 30px;
     
     button {
       padding: 12px;
@@ -40,4 +41,21 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 800px) {
+  .product-container__row {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 80px;
+    overflow-x: scroll;
+  
+    .product-content__row {
+      flex-shrink: 0;
+    }
+  
+    .container-button {
+      display: none;
+    }
+}
 }

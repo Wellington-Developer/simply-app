@@ -1,21 +1,32 @@
+// Styles
 import './App.css'
-import { Header } from './components/Header'
-import { BannerContainer } from './components/Banner'
-import { Categories } from './components/Categories'
+
+// React Context
 import { GlobalStorage } from './components/context/GlobalContext'
-import { ProductRowCategories } from './components/ProductRow/ProductRowCategories'
+
+// React Components
+import { Header } from './components/Header'
+import { Home } from './components'
+
+// React Router Dom
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CategoryProduct } from './components/CategoryProducts';
+
 
 function App() {
 
   return (
-    <div className="container">
-      <GlobalStorage>
-        <Header/>
-        <BannerContainer />
-        <Categories />
-        <ProductRowCategories />
-      </GlobalStorage>
-    </div>
+    <GlobalStorage>
+      <BrowserRouter>
+          <div className="container">
+            <Header/>
+            <Routes>
+              <Route path="/" element={ <Home /> } />
+              <Route path="/category/:id" element={ <CategoryProduct /> } />
+            </Routes>
+          </div>
+      </BrowserRouter>
+    </GlobalStorage>
   )
 }
 

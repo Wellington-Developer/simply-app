@@ -1,0 +1,8 @@
+.container-category__product {
+  width: 100%;
+}
+.container-category__product .content-category__product {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}/*# sourceMappingURL=styles.css.map */

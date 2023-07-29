@@ -10,8 +10,6 @@ import { GlobalContext } from "../../context/GlobalContext"
 // React Components
 import { ProductRow } from '..';
 
-
-
 export const ProductRowCategories = () => {
   const { allCategories } = useContext(GlobalContext);
 
