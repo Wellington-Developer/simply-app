@@ -5,7 +5,7 @@ import './styles.css';
 import { useState, useEffect } from "react";
 
 // React Icons
-import { BiCartAlt } from 'react-icons/bi';
+import { BiCartAlt, BiSearchAlt2, BiX } from 'react-icons/bi';
 
 // Framer Motion
 import { motion } from 'framer-motion';
@@ -21,7 +21,7 @@ import { InputSearch } from '../InputSerch';
 
 function useMenuAnimation(isOpen: boolean) {
     const [scope, animate] = useAnimate();
-  
+
     useEffect(() => {
       const menuAnimations: any = isOpen
         ? [
@@ -67,11 +67,16 @@ function useMenuAnimation(isOpen: boolean) {
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [ inputIsOpen, setInputIsOpen ] = useState(false);
+
     const scope = useMenuAnimation(isOpen);
 
     const handleModalIsOpen = () => {
       setModalIsOpen(!modalIsOpen);
-      console.log(modalIsOpen)
+    }
+
+    const handleInputIsOpen = () => {
+      setInputIsOpen(!inputIsOpen);
     }
 
     return (
@@ -100,6 +105,14 @@ export const Header = () => {
             </div>
             <div className="right-side__header">
               <div className="right-icon__header">
+                {
+                  inputIsOpen ?
+                  (
+                    <BiX onClick={ handleInputIsOpen } />
+                    ) : (
+                    <BiSearchAlt2 onClick={ handleInputIsOpen } />
+                  )
+                }
                 <BiCartAlt onClick={ handleModalIsOpen }/>
               </div>
             </div>
@@ -107,7 +120,9 @@ export const Header = () => {
         {
           modalIsOpen && <Cart modal={ handleModalIsOpen }/>
         }
-        <InputSearch />
+        {
+          inputIsOpen && <InputSearch />
+        }
         </>
     )
 }

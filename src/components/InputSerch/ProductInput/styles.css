@@ -5,7 +5,6 @@
   justify-content: space-between;
   align-items: center;
   margin: 12px;
-  padding: 0 12px;
 }
 .container-product__input .left-side {
   display: flex;
@@ -31,9 +30,12 @@
 }
 .container-product__input .right-side {
   display: flex;
-  gap: 24px;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+.container-product__input .right-side h3 {
+  font-size: 14px;
 }
 .container-product__input .right-side .add-to__cart {
   padding: 12px;

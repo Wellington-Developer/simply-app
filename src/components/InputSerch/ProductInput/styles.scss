@@ -5,7 +5,6 @@
   justify-content: space-between;
   align-items: center;
   margin: 12px;
-  padding: 0 12px;
 
   .left-side {
     display: flex;
@@ -33,9 +32,13 @@
 
   .right-side {
     display: flex;
-    gap: 24px;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+    h3 {
+      font-size: 14px;
+    }
 
     .add-to__cart {
       padding: 12px;
