@@ -11,6 +11,7 @@ import { Home } from './components'
 // React Router Dom
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CategoryProduct } from './components/CategoryProducts';
+import { Footer } from './components/Footer';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path="/category/:id" element={ <CategoryProduct /> } />
             </Routes>
           </div>
+            <Footer />
       </BrowserRouter>
     </GlobalStorage>
   )
