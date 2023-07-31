@@ -16,6 +16,7 @@ import { Menu } from './utils/Menu/Menu';
 import { MenuToggle } from './utils/MenuToggle';
 import { Cart } from '../Cart';
 import { Link } from 'react-router-dom';
+import { InputSearch } from '../InputSerch';
 
 
 function useMenuAnimation(isOpen: boolean) {
@@ -106,6 +107,7 @@ export const Header = () => {
         {
           modalIsOpen && <Cart modal={ handleModalIsOpen }/>
         }
+        <InputSearch />
         </>
     )
 }

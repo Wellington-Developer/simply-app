@@ -22,6 +22,16 @@ export const GlobalStorage = ({ children }) => {
     .then(r => setAllCategories(r))
   ]
 
+  const getRefToSetWidthProduct = (ref) => {
+    setRefWidth(ref)
+  }
+
+  const getProductsPerCategory = (category) => {
+    fetch(`https://fakestoreapi.com/products/category/${category}`)
+    .then(r => r.json())
+    .then(response => setProductCategory(response))
+  }
+
   const setProductToCart = (id) => {
       const product = allProducts.find((product) => product.id === id);
       const isProductAlready = cart.some(carting => carting.id === product.id);
@@ -36,15 +46,6 @@ export const GlobalStorage = ({ children }) => {
     setCart(newCart)
   }
 
-  const getRefToSetWidthProduct = (ref) => {
-    setRefWidth(ref)
-  }
-
-  const getProductsPerCategory = (category) => {
-    fetch(`https://fakestoreapi.com/products/category/${category}`)
-    .then(r => r.json())
-    .then(response => setProductCategory(response))
-  }
 
   useEffect(() => {
     getAllProducts()
