@@ -26,11 +26,17 @@
 .container-singleproduct__cart .right-sideproduct__cart .left-side h1 {
   font-size: 1.5rem;
   font-weight: 600;
+  color: var(--black-color-o6);
+  max-width: 12ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .container-singleproduct__cart .right-sideproduct__cart .left-side h4 {
   font-size: 1rem;
   padding: 0;
   margin: 0;
+  color: var(--black-color-o5);
 }
 .container-singleproduct__cart .right-sideproduct__cart .right-side {
   padding: 12px;

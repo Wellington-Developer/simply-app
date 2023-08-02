@@ -6,6 +6,8 @@ import './styles.css';
 import { BiCartAdd } from 'react-icons/bi';
 import { GlobalContext } from '../context/GlobalContext';
 
+import { Link } from 'react-router-dom';
+
 type IProduct = {
   image: string,
   title: string,
@@ -24,15 +26,19 @@ export const Product = ({ title, price, image, id }: IProduct) => {
   return (
     <div className="container-single__product" >
       <div className="content-single__product">
-        <div className="container-image__product" style={ style }>
-          <img src={image} alt={title} />
-        </div>
+        <Link to={`/product/${id}`}>
+          <div className="container-image__product" style={ style }>
+            <img src={image} alt={title} />
+          </div>
+        </Link>
 
         <div className="container-info__product">
-          <div className="info-product">
-            <p>{title}</p>
-            <h2>R$ {price}</h2>
-          </div>
+          <Link to={`/product/${id}`}>
+            <div className="info-product">
+              <p>{title}</p>
+              <h2>R$ {price}</h2>
+            </div>
+          </Link>
 
           <div className="add-to__cart" onClick={ () => setProductToCart(id) }>
             <BiCartAdd/>
