@@ -1,9 +1,10 @@
 .container-input__search {
   width: 100%;
   position: fixed;
-  top: 80px;
+  top: 90px;
   right: 0px;
   left: 0px;
+  outline: 1px solid var(--black-color-o2);
   z-index: 999999;
 }
 .container-input__search input {
