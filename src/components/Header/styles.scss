@@ -14,7 +14,7 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    z-index: 1;
+    z-index: 9999999;
 
     .left-side__header, .right-side__header, .mid-side__header {
         flex: 1;
