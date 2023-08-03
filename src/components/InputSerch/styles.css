@@ -10,6 +10,7 @@
 .container-input__search input {
   width: 100%;
   padding: 12px;
+  border-radius: 5px;
 }
 .container-input__search .container-product__search {
   background: white;
