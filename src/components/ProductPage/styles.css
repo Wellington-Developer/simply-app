@@ -2,7 +2,7 @@
   grid-column: 1/4;
   display: flex;
   gap: 24px;
-  padding: 60px 0;
+  padding: 120px 0;
 }
 
 .buttons button {
@@ -92,7 +92,7 @@
      object-fit: cover;
   border-radius: 40px;
   position: sticky;
-  top: 30px;
+  top: 120px;
 }
 
 .right-side__content {
