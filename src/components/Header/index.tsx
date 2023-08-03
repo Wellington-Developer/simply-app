@@ -99,7 +99,7 @@ export const Header = () => {
                 }}
             >
                 <Link to="/">
-                  <h1>Veja discord pfv</h1>
+                  <h1>Simply</h1>
                 </Link>
                 </motion.div>
             </div>
