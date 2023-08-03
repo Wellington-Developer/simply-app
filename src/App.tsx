@@ -13,6 +13,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CategoryProduct } from './components/CategoryProducts';
 import { Footer } from './components/Footer';
 import { ProductPage } from './components/ProductPage';
+import { Termos } from './components/Termos';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/" element={ <Home /> } />
               <Route path="/category/:id" element={ <CategoryProduct /> } />
               <Route path="/product/:id" element={ <ProductPage /> } />
+              <Route path="/termos" element={ <Termos /> } />
             </Routes>
           </div>
             <Footer />
