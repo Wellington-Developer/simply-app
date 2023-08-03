@@ -1,4 +1,5 @@
 // Styles
+import { Link } from 'react-router-dom'
 import './styles.css'
 
 export const Footer = () => {
@@ -9,7 +10,9 @@ export const Footer = () => {
                 <div className="box-footer">
                     <h1>Institucional</h1>
                     <ul>
-                        <li>Cupons de desconto</li>
+                        <Link to="/termos">
+                            <li>Termos</li>
+                        </Link>
                         <li>Formas de pagamento</li>
                         <li>Atendimento</li>
                         <li>Como Comprar</li>
