@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-
 export const GlobalContext = React.createContext(null);
 
 export const GlobalStorage = ({ children }) => {
+  const [ showPopup, setShowPopup] = useState(false);
   const [ allProducts, setAllProducts ] = useState([])
   const [ allCategories, setAllCategories ] = useState()
   const [ cart, setCart ] = useState([])
@@ -35,10 +35,16 @@ export const GlobalStorage = ({ children }) => {
   const setProductToCart = (id) => {
       const product = allProducts.find((product) => product.id === id);
       const isProductAlready = cart.some(carting => carting.id === product.id);
+      setShowPopup(true);
+
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 5000);
 
       if(!isProductAlready) {
         setCart([...cart, product])
       }
+
   }
 
   const deleteProductToCart = (id: number) => {
@@ -53,6 +59,6 @@ export const GlobalStorage = ({ children }) => {
   }, [])
 
   return (
-    <GlobalContext.Provider value={ { allProducts, allCategories, setProductToCart, cart, deleteProductToCart, getRefToSetWidthProduct, refWidth, getProductsPerCategory, productsCategory } }>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={ { allProducts, allCategories, setProductToCart, cart, deleteProductToCart, getRefToSetWidthProduct, refWidth, getProductsPerCategory, productsCategory, showPopup } }>{children}</GlobalContext.Provider>
   )
 }

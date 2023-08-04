@@ -7,6 +7,7 @@ import { BiCartAdd } from 'react-icons/bi';
 import { GlobalContext } from '../context/GlobalContext';
 
 import { Link } from 'react-router-dom';
+import { Popup } from '../Popup';
 
 type IProduct = {
   image: string,
@@ -16,7 +17,7 @@ type IProduct = {
 }
 
 export const Product = ({ title, price, image, id }: IProduct) => {
-  const { setProductToCart, refWidth } = useContext(GlobalContext);
+  const { setProductToCart, refWidth, showPopup } = useContext(GlobalContext);
   const widthRecalculedImage = ((refWidth - 72) / 3)
   const style = {
     maxWidth: Number(widthRecalculedImage), 
@@ -25,6 +26,7 @@ export const Product = ({ title, price, image, id }: IProduct) => {
 
   return (
     <div className="container-single__product" >
+      <Popup message="Produto adicionado ao carrinho!" show={showPopup}/>
       <div className="content-single__product">
         <Link to={`/product/${id}`}>
           <div className="container-image__product" style={ style }>

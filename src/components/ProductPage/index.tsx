@@ -7,11 +7,12 @@ import { useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalContext';
 import { AiFillCreditCard, AiFillStar } from 'react-icons/ai';
 import { BiCartAdd } from 'react-icons/bi';
+import { Popup } from '../Popup';
 
 export const ProductPage = () => {
   const { id } = useParams();
   const [ product, setProduct ] = useState<any>();
-  const { allProducts, setProductToCart } = useContext(GlobalContext);
+  const { allProducts, setProductToCart, showPopup } = useContext(GlobalContext);
   const filteredProduct = ( id ) => {
     if(allProducts) {
       const product = allProducts.filter((product) => product.id == id)
@@ -30,6 +31,7 @@ export const ProductPage = () => {
       {
         product && product.map((product, index) => {
           return <div className="info-product__page" key={index}>
+          <Popup message="Produto adicionado ao carrinho!" show={showPopup}/>
           <div className="left-side__content">
               <img src={product.image} />
           </div>
