@@ -14,6 +14,7 @@ import { CategoryProduct } from './components/CategoryProducts';
 import { Footer } from './components/Footer';
 import { ProductPage } from './components/ProductPage';
 import { Termos } from './components/Termos';
+import GoToTop from './components/GoToTop';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             </Routes>
           </div>
             <Footer />
+            <GoToTop />
       </BrowserRouter>
     </GlobalStorage>
   )
