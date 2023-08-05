@@ -8,6 +8,7 @@
   cursor: pointer;
   gap: 24px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .image-product__banner {
