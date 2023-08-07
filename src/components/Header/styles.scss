@@ -59,13 +59,28 @@
         background: transparent;
         display: flex;
         gap: 12px;
-        
+
         svg {
             transition: all 0.3s ease-in-out;
         }
         
         svg:hover {
             color: var(--primary-color-o5);
+        }
+
+        .contador {
+            position: relative;
+            top: -6px;
+            right: 22px;
+            height: 14px;
+            width: 14px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: flex;
+            font-weight: bold;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color-o5);
         }
     }
 }

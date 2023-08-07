@@ -2,7 +2,7 @@
 import './styles.css';
 
 // React Hooks
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 // React Icons
 import { BiCartAlt, BiSearchAlt2, BiX } from 'react-icons/bi';
@@ -17,6 +17,7 @@ import { MenuToggle } from './utils/MenuToggle';
 import { Cart } from '../Cart';
 import { Link } from 'react-router-dom';
 import { InputSearch } from '../InputSerch';
+import { GlobalContext } from '../context/GlobalContext';
 
 
 function useMenuAnimation(isOpen: boolean) {
@@ -68,6 +69,8 @@ export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [ inputIsOpen, setInputIsOpen ] = useState(false);
+    const { cart } = useContext(GlobalContext);
+
 
     const scope = useMenuAnimation(isOpen);
 
@@ -114,6 +117,9 @@ export const Header = () => {
                   )
                 }
                 <BiCartAlt onClick={ handleModalIsOpen }/>
+                <div className="contador">
+                  {cart.length}
+                </div>
               </div>
             </div>
         </div>

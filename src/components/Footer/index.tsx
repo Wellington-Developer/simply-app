@@ -1,9 +1,29 @@
 // Styles
 import { Link } from 'react-router-dom'
 import './styles.css'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 export const Footer = () => {
+    const refferenceWidth = useRef(null);
+    const [ isWidthPercentage, setIsWidthPercentage ] = useState(0);
+
+    const handleGetWidthScreen = () => {
+        setIsWidthPercentage(refferenceWidth.current.offsetWidth);
+    }
+
+    const handleFooterMenu = () => {
+        if(refferenceWidth.current.offsetWidth <= 600) {
+            setShowLinks(false)
+            setShowLinks2(false)
+            setShowLinks3(false)
+            setShowLinks4(false)
+        } else {
+            setShowLinks(true)
+            setShowLinks2(true)
+            setShowLinks3(true)
+            setShowLinks4(true)
+        }
+    }
 
     const [ showLinks, setShowLinks ] = useState(false)
     const [ showLinks2, setShowLinks2 ] = useState(false)
@@ -26,8 +46,14 @@ export const Footer = () => {
         setShowLinks4(!showLinks4)
     }
 
+    useEffect(() => {
+        handleGetWidthScreen()
+        handleFooterMenu()
+
+    }, [])
+
     return (
-        <div className="container-footer">
+        <div className="container-footer" ref={refferenceWidth}>
             <div className="submenu">
                 <div className="box-footer" onClick={toggleLinks}>
                     <h1 >Institucional</h1>

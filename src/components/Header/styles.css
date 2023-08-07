@@ -57,4 +57,18 @@
 }
 .principal-container__header .right-icon__header svg:hover {
   color: var(--primary-color-o5);
+}
+.principal-container__header .right-icon__header .contador {
+  position: relative;
+  top: -6px;
+  right: 22px;
+  height: 14px;
+  width: 14px;
+  border-radius: 5px;
+  font-size: 12px;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color-o5);
 }/*# sourceMappingURL=styles.css.map */
