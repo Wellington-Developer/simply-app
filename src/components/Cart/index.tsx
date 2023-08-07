@@ -44,13 +44,13 @@ export const Cart = ({ modal } : any) => {
             <h3>Resumo do pedido</h3>
             <div className="product-content__cart">
               {
-                cart ?
+                cart.length > 0 ?
                 (
                   cart.map((product) => {
                     return <ProductCart title={product.title} image={product.image} id={product.id} price={product.price} />
                   })
                 ) : (
-                  <h3>Adicione produtos ao carrinho.</h3>
+                  <p>Adicione produtos ao carrinho.</p>
                 )
               }
             </div>
