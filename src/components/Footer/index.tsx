@@ -5,11 +5,6 @@ import { useState, useRef, useEffect } from 'react'
 
 export const Footer = () => {
     const refferenceWidth = useRef(null);
-    const [ isWidthPercentage, setIsWidthPercentage ] = useState(0);
-
-    const handleGetWidthScreen = () => {
-        setIsWidthPercentage(refferenceWidth.current.offsetWidth);
-    }
 
     const handleFooterMenu = () => {
         if(refferenceWidth.current.offsetWidth <= 600) {
@@ -47,7 +42,6 @@ export const Footer = () => {
     }
 
     useEffect(() => {
-        handleGetWidthScreen()
         handleFooterMenu()
 
     }, [])
