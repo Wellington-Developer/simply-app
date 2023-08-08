@@ -1,5 +1,5 @@
 // Styles
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Input } from './Utils/Input';
 import './styles.css';
 
@@ -7,9 +7,24 @@ import './styles.css';
 import { BiX } from 'react-icons/bi';
 import { GlobalContext } from '../context/GlobalContext';
 import { ProductCart } from './Utils/ProductCart';
+import { PaymentMethods } from './Utils/PaymentMethods';
 
 export const Cart = ({ modal } : any) => {
   const {cart} = useContext(GlobalContext);
+  let soma = 0;
+  const [ productPrice, setProductPrice ] = useState(0)
+
+  const sumPrice = () => {
+    cart.map((product) => {
+      soma += product.price
+      setProductPrice(soma)
+    })
+  }
+
+  useEffect(() => {
+    sumPrice()
+  }, [cart])
+  
 
   return (
     <div className="section-side__cart">
@@ -28,11 +43,7 @@ export const Cart = ({ modal } : any) => {
             <h3>Forma de Pagamento</h3>
 
             <div className="box-payment__cart">
-              <div className="box"></div>
-              <div className="box"></div>
-              <div className="box"></div>
-              <div className="box"></div>
-              <div className="box"></div>
+              <PaymentMethods />
             </div>
           </div>
         </div>
@@ -56,6 +67,13 @@ export const Cart = ({ modal } : any) => {
 
           </div>
           <div className="quicly-resume__cart">
+              <h4>Total:</h4>
+              {
+                cart.length > 0 ? 
+                (<h3>R$ {productPrice}</h3>) 
+                : 
+                (<h3>R$ 0</h3>)
+              }
 
           </div>
         </div>

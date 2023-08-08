@@ -83,12 +83,29 @@
     }
 
     .right-side__cart {
+      
+      .quicly-resume__cart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 120px;
+
+        h4 {
+          color: var(--black-color-o5);
+        }
+
+        h3 {
+          color: var(--black-color-o6);
+        }
+      }
+
       .product-container__cart {
         h3 {
           font-size: 1.5rem;
           padding: 4px 0;
           padding-bottom: 48px;
         }
+
       }
     }
   
