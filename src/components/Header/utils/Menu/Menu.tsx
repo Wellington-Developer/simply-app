@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 
 export const Menu = () => {
   const global = useContext(GlobalContext);
-  const submenu = ["item 1"]
-
   return (
     <nav className="menu">
       {

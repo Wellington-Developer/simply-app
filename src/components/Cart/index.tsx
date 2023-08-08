@@ -15,9 +15,6 @@ export const Cart = ({ modal } : any) => {
     <div className="section-side__cart">
       <div className="content-side__cart">
         <div className="left-side__cart">
-          <div className="logo">
-            <h1>Simply</h1>
-          </div>
 
           <div className="info-contact__cart">
             <h3>Informações de Entrega</h3>
@@ -46,8 +43,8 @@ export const Cart = ({ modal } : any) => {
               {
                 cart.length > 0 ?
                 (
-                  cart.map((product) => {
-                    return <ProductCart title={product.title} image={product.image} id={product.id} price={product.price} />
+                  cart.map((product, index) => {
+                    return <ProductCart title={product.title} image={product.image} id={product.id} price={product.price} key={index} />
                   })
                 ) : (
                   <p>Adicione produtos ao carrinho.</p>

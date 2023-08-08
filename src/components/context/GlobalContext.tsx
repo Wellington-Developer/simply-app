@@ -44,7 +44,6 @@ export const GlobalStorage = ({ children }) => {
       if(!isProductAlready) {
         setCart([...cart, product])
       }
-
   }
 
   const deleteProductToCart = (id: number) => {
