@@ -170,6 +170,32 @@
   gap: 24px;
 }
 
+.container-info__products {
+  display: flex;
+  overflow-x: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.container-info__products .left-side, .container-info__products .right-side {
+  width: 100%;
+  flex-shrink: 0;
+}
+.container-info__products .left-side .title, .container-info__products .right-side .title {
+  padding-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.container-info__products .left-side .title h1, .container-info__products .right-side .title h1 {
+  padding: 0;
+}
+.container-info__products .left-side .title p, .container-info__products .right-side .title p {
+  cursor: pointer;
+}
+.container-info__products .left-side .title p:hover, .container-info__products .right-side .title p:hover {
+  color: var(--black-color-o3);
+}
+
 .bottom-side__products {
   margin: 60px 0;
   background: var(--black-color-o1);

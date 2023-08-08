@@ -178,6 +178,38 @@
   gap: 24px;
 }
 
+  .container-info__products {
+    display: flex;
+    overflow-x: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    .left-side, .right-side {
+      width: 100%;
+      flex-shrink: 0;
+      
+      .title {
+        padding-bottom: 24px;
+        
+        h1 {
+          padding: 0;
+        }
+
+        p {
+          cursor: pointer;
+        }
+
+        p:hover {
+          color: var(--black-color-o3);
+        }
+
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+    }
+  }
+
 .bottom-side__products {
   margin: 60px 0;
   background: var(--black-color-o1);

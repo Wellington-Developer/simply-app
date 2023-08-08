@@ -2,7 +2,7 @@
 import './styles.css';
 
 // React Context
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalContext';
 import { AiFillCreditCard, AiFillStar } from 'react-icons/ai';
@@ -10,6 +10,7 @@ import { BiCartAdd } from 'react-icons/bi';
 import { Popup } from '../Popup';
 
 export const ProductPage = () => {
+  const refWidth = useRef(null)
   const { id } = useParams();
   const [ quantity, setQuantity ] = useState(0);
   const [ product, setProduct ] = useState<any>();
@@ -35,6 +36,14 @@ export const ProductPage = () => {
   const handleQuantityPlus = () => {
     const quant = quantity + 1
     setQuantity(quant)
+  }
+
+  const handleScrollLeft = () => {
+    refWidth.current.scrollLeft -= refWidth.current.offsetWidth;
+  }
+
+  const handleScrollRight = () => {
+    refWidth.current.scrollLeft += refWidth.current.offsetWidth;
   }
 
   useEffect(() => {
@@ -115,12 +124,20 @@ export const ProductPage = () => {
       <div className="bottom-side__products">
         {
           product && product.map((pro, index) => {
-            return <div key={index}>
+            return <div key={index} className="container-info__products" ref={refWidth}>
               <div className="left-side">
-                <h1>Description</h1>
+                <div className="title">
+                  <h1>Descrição</h1>
+                  <p onClick={handleScrollRight}>Ver avaliações</p>
+                </div>
                 <h3>{pro.description}{pro.description}{pro.description}{pro.description}{pro.description}</h3>
               </div>
               <div className="right-side">
+                <div className="title">
+                  <h1>Avaliação</h1>
+                  <p onClick={handleScrollLeft}>Ver descrição</p>
+                </div>
+                <h3>Aqui estarão as avaliações (desenvolvendo essa parte agora)</h3>
               </div>
             </div>
           })
