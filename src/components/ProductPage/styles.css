@@ -128,10 +128,34 @@
   align-items: center;
   padding: 60px 0;
 }
+.select-inputs .quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.select-inputs .quantity p {
+  padding-bottom: 4px;
+}
+.select-inputs .quantity .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.select-inputs .quantity .bottom .left, .select-inputs .quantity .bottom .right {
+  padding: 12px;
+  border-radius: 4px;
+  background: var(--primary-color-o1);
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+}
+.select-inputs .quantity .bottom .left:hover, .select-inputs .quantity .bottom .right:hover {
+  background: var(--primary-color-o3);
+}
 
 .select-inputs select {
   width: 50%;
-  border: 1px solid #fefefe;
+  border: 1px solid var(--black-color-o3);
   background: none;
   border-radius: 5px;
   padding: 12px 4px;

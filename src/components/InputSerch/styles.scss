@@ -4,7 +4,6 @@
   top: 90px;
   right: 0px;
   left: 0px;
-  outline: 1px solid var(--black-color-o2);
   
   z-index: 999999;
   input {
@@ -12,6 +11,11 @@
     padding: 12px;
     border-radius: 5px;
   }
+  
+  textarea:focus, input:focus{
+    border: mone;
+    outline: none;
+}
 
   .container-product__search {
     background: white;

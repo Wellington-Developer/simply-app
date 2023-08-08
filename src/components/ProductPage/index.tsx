@@ -11,13 +11,30 @@ import { Popup } from '../Popup';
 
 export const ProductPage = () => {
   const { id } = useParams();
+  const [ quantity, setQuantity ] = useState(0);
   const [ product, setProduct ] = useState<any>();
   const { allProducts, setProductToCart, showPopup } = useContext(GlobalContext);
+
   const filteredProduct = ( id ) => {
     if(allProducts) {
       const product = allProducts.filter((product) => product.id == id)
       setProduct(product)
     } 
+  }
+
+  const handleQuantityMinus = () => {
+    if(quantity <= 0) {
+      let quant = 0;
+      setQuantity(quant)
+    } else {
+      let quant = quantity - 1
+      setQuantity(quant)
+    }
+  }
+
+  const handleQuantityPlus = () => {
+    const quant = quantity + 1
+    setQuantity(quant)
   }
 
   useEffect(() => {
@@ -68,6 +85,23 @@ export const ProductPage = () => {
                       <option value="azul_marinho">GG</option>
                       <option value="amarelo">XGG</option>
                   </select>
+
+                  <div className="quantity">
+                    <div className="top-side">
+                      <p>Quantidade</p>
+                    </div>
+                    <div className="bottom">
+                      <div className="left" onClick={ handleQuantityMinus }>
+                        -
+                      </div>
+                      <div className="mid">
+                        <h3>{ quantity }</h3>
+                      </div>
+                      <div className="right" onClick={ handleQuantityPlus }>
+                        +
+                      </div>
+                    </div>
+                  </div>
               </div>
               <div className="buttons">
                 <button onClick={ () => setProductToCart(product.id) }>Adicionar ao carrinho<BiCartAdd /></button>
