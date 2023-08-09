@@ -10,6 +10,15 @@
   align-items: center;
   justify-content: center;
 }
+.section-side__cart .product-discount__cart {
+  margin-top: 60px;
+}
+.section-side__cart .product-discount__cart input {
+  border: 1px solid #e3e3e3;
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+}
 .section-side__cart .content-side__cart {
   max-width: 1162px;
   width: 100%;
@@ -70,7 +79,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 120px;
 }
 .section-side__cart .content-side__cart .right-side__cart .quicly-resume__cart h4 {
   color: var(--black-color-o5);

@@ -13,6 +13,17 @@ export const Cart = ({ modal } : any) => {
   const {cart} = useContext(GlobalContext);
   let soma = 0;
   const [ productPrice, setProductPrice ] = useState(0)
+  const [ discount, setDiscount ] = useState();
+  const [ hasDiscount, setHasDiscount ] = useState(0)
+
+  const handleChangeDiscount = (e: any) => {
+    setDiscount(e.target.value)
+    if(discount == "test") {
+      setHasDiscount(5)
+    } else {
+      setHasDiscount(0)
+    }
+  }
 
   const sumPrice = () => {
     cart.map((product) => {
@@ -64,17 +75,26 @@ export const Cart = ({ modal } : any) => {
             </div>
           </div>
           <div className="product-discount__cart">
-
+              <input
+                type="text"
+                placeholder="Cupom de desconto"
+                onChange={ handleChangeDiscount }
+              />
+          </div>
+          <div className="quicly-resume__cart">
+              <h4>Desconto:</h4>
+              {
+                (<h3>R$ {hasDiscount}</h3>)
+              }
           </div>
           <div className="quicly-resume__cart">
               <h4>Total:</h4>
               {
                 cart.length > 0 ? 
-                (<h3>R$ {productPrice}</h3>) 
+                (<h3>R$ {hasDiscount ? (productPrice - hasDiscount) : (productPrice)}</h3>) 
                 : 
                 (<h3>R$ 0</h3>)
               }
-
           </div>
         </div>
       <div className="content-close__cart" onClick={modal}>

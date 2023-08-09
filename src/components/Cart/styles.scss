@@ -10,6 +10,16 @@
   align-items: center;
   justify-content: center;
 
+  .product-discount__cart {
+    margin-top: 60px;
+    input {
+      border: 1px solid #e3e3e3;
+      width: 100%;
+      padding: 12px;
+      border-radius: 5px;
+    }
+  }
+
   .content-side__cart {
     max-width: 1162px;
     width: 100%;
@@ -88,7 +98,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: 120px;
 
         h4 {
           color: var(--black-color-o5);
@@ -105,7 +114,6 @@
           padding: 4px 0;
           padding-bottom: 48px;
         }
-
       }
     }
   
