@@ -1,9 +1,10 @@
 .section-side__cart {
   position: fixed;
   top: 0;
-  right: 0;
   bottom: 0;
+  right: 0;
   left: 0;
+  height: 100vh;
   background: white;
   z-index: 9999;
   display: flex;
@@ -11,6 +12,7 @@
   justify-content: center;
 }
 .section-side__cart .product-discount__cart {
+  position: absolute;
   margin-top: 60px;
 }
 .section-side__cart .product-discount__cart input {
@@ -93,7 +95,14 @@
 }
 
 @media screen and (max-width: 768px) {
+  .section-side__cart {
+    position: fixed;
+    padding: 0 20px;
+    top: 40px;
+    bottom: 0;
+  }
   .section-side__cart .content-side__cart {
     flex-direction: column;
+    overflow: auto;
   }
 }/*# sourceMappingURL=styles.css.map */
