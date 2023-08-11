@@ -16,9 +16,10 @@
   flex-direction: column;
   gap: 12px;
   padding-left: 24px;
+  padding-top: 48px;
 }
 .menu li {
-  color: var(--black-color-o6);
+  color: var(--black-color-o1);
   display: block;
   transform-origin: -20px 50%;
   font-weight: bold;

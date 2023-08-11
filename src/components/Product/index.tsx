@@ -24,10 +24,17 @@ export const Product = ({ title, price, image, id }: IProduct) => {
     height: Number(widthRecalculedImage + 200),
   }
 
+  const options = { style: 'currency', currency: 'BRL' }
+  const formatNumber = new Intl.NumberFormat('pt-BR', options)
+
   return (
     <div className="container-single__product" >
       <Popup message="Produto adicionado ao carrinho!" show={showPopup}/>
       <div className="content-single__product">
+
+        <div className="discount-product">
+          - 25%
+        </div>
         <Link to={`/product/${id}`}>
           <div className="container-image__product" style={ style }>
             <img src={image} alt={title} />
@@ -38,7 +45,10 @@ export const Product = ({ title, price, image, id }: IProduct) => {
           <Link to={`/product/${id}`}>
             <div className="info-product">
               <p>{title}</p>
-              <h2>R$ {price}</h2>
+              <div className="price">
+                <h2>{formatNumber.format(price)}</h2>
+                <a href="#">{formatNumber.format(price - 5)}</a>
+              </div>
             </div>
           </Link>
 

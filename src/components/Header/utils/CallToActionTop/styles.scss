@@ -1,0 +1,13 @@
+.container-info__action {
+  z-index: 999999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(22,20,73,1) 0%, rgba(9,9,121,1) 20%, rgba(0,212,255,1) 96%);
+  color: var(--black-color-o1);
+}

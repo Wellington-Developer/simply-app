@@ -10,6 +10,7 @@ import { GlobalContext } from "../../context/GlobalContext"
 // React Components
 import { ProductRow } from '..';
 import { Product } from '../../Product';
+import { Link } from 'react-router-dom';
 
 export const ProductRowCategories = () => {
   const { allCategories } = useContext(GlobalContext);
@@ -38,7 +39,12 @@ export const ProductRowCategories = () => {
         allCategories &&
         allCategories.map((category, index) => {
           return <div className="product-category__row" key={index}>
-            <h1>{category}</h1>
+            <div className="info-category">
+              <h1>{category}</h1>
+              <Link to={`/category/${category}`}>
+                <p>Ver mais</p>
+              </Link>
+            </div>
             <div className="product-content__row">
               <ProductRow category={category}/>
             </div>

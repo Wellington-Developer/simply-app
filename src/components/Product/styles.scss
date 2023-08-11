@@ -1,6 +1,21 @@
 .container-single__product {
   
   .content-single__product {
+    position: relative;
+
+    .discount-product {
+      padding: 8px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 999999;
+      background: var(--primary-color-o5);
+      border-radius: 5px;
+      color: var(--black-color-o1);
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
     .container-image__product {
       width: 100%;
       height: 400px;
@@ -36,6 +51,18 @@
 
     .info-product {
       padding: 12px 0;
+
+      .price {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+
+        a {
+          color: var(--black-color-o5);
+          text-decoration: line-through;
+        }
+      }
       p {
         font-size: 1.25rem;
         padding-bottom: 4px;

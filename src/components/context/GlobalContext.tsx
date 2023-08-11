@@ -9,6 +9,7 @@ export const GlobalStorage = ({ children }) => {
   const [ refWidth, setRefWidth ] = useState()
   const [ productsCategory, setProductCategory ] = useState()
   const [ dataProduct, setDataProduct ] = useState()
+  const [ termsUserHasBeenAccepted, setTermsUserHasBeenAccepted ] = useState<any>()
 
 
   const getAllProducts = () => {
@@ -37,6 +38,11 @@ export const GlobalStorage = ({ children }) => {
     setDataProduct(array)
   }
 
+  const userHasBeenAcceptTerms = () => {
+    const data = localStorage.getItem("termos")
+    setTermsUserHasBeenAccepted(data)
+  }
+
   const setProductToCart = (id) => {
       const product = allProducts.find((product) => product.id === id);
       const isProductAlready = cart.some(carting => carting.id === product.id);
@@ -60,9 +66,10 @@ export const GlobalStorage = ({ children }) => {
   useEffect(() => {
     getAllProducts()
     getAllCategories()
+    userHasBeenAcceptTerms()
   }, [])
 
   return (
-    <GlobalContext.Provider value={ { allProducts, allCategories, setProductToCart, cart, deleteProductToCart, getRefToSetWidthProduct, refWidth, getProductsPerCategory, productsCategory, showPopup, setNewProduct, dataProduct } }>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={ { allProducts, allCategories, setProductToCart, cart, deleteProductToCart, getRefToSetWidthProduct, refWidth, getProductsPerCategory, productsCategory, showPopup, setNewProduct, dataProduct, termsUserHasBeenAccepted } }>{children}</GlobalContext.Provider>
   )
 }

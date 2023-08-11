@@ -1,0 +1,13 @@
+.container-info__action {
+  z-index: 999999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, rgb(22, 20, 73) 0%, rgb(9, 9, 121) 20%, rgb(0, 212, 255) 96%);
+  color: var(--black-color-o1);
+}/*# sourceMappingURL=styles.css.map */

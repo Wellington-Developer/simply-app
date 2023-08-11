@@ -17,6 +17,8 @@ import { Termos } from './components/Termos';
 import GoToTop from './components/GoToTop';
 import { PoliticaPrivacidade } from './components/Footer/Utils/PoliticaPrivacidade';
 import { AddNewProduct } from './components/AddNewProduct';
+import { WhatsAppIcon } from './components/WhatsAppIcon';
+import { PopupTermsAccept } from './components/PopupTermosAccept';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
     <GlobalStorage>
       <BrowserRouter>
           <div className="container">
+          <WhatsAppIcon />
+          <PopupTermsAccept />
             <Header/>
             <Routes>
               <Route path="/" element={ <Home /> } />

@@ -1,13 +1,22 @@
 .products-new {
-  border: 1px solid red;
   display: flex;
   gap: 24px;
 }
 
 .product-category__row {
+  .info-category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+
+    p {
+      color: var(--primary-color-o5);
+    }
+  }
+
   h1 {
     font-size: 32px;
-    padding-bottom: 24px;
     color: var(--black-color-o6);
     font-weight: 600;
   }

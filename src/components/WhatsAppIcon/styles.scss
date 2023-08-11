@@ -1,0 +1,19 @@
+.container-whatsapp {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999999999;
+  cursor: pointer;
+
+  .content-whatsapp {
+    background: #34af23;
+    padding: 18px;
+    border-radius: 50%;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+  }
+}
