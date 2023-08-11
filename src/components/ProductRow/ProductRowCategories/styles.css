@@ -1,3 +1,9 @@
+.products-new {
+  border: 1px solid red;
+  display: flex;
+  gap: 24px;
+}
+
 .product-category__row h1 {
   font-size: 32px;
   padding-bottom: 24px;

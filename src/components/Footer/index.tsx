@@ -2,6 +2,13 @@
 import { Link } from 'react-router-dom'
 import './styles.css'
 import { useState, useRef, useEffect } from 'react'
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+
+// Data
+import { cnpjData } from './data';
+
+// Images
+import logoSimply from '../../assets/logo.png';
 
 export const Footer = () => {
     const refferenceWidth = useRef(null);
@@ -54,15 +61,9 @@ export const Footer = () => {
                     {
                         showLinks &&
                         <ul>
-                            <Link to="/termos">
-                                <li>Termos</li>
+                            <Link to="/politica-privacidade">
+                                <li>Politicas de Privacidade</li>
                             </Link>
-                            <li>Formas de pagamento</li>
-                            <li>Atendimento</li>
-                            <li>Como Comprar</li>
-                            <li>Trocas e devoluções</li>
-                            <li>Quem somos</li>
-                            <li>Políticas de privacidade</li>
                         </ul>
                     }
                 </div>
@@ -81,7 +82,7 @@ export const Footer = () => {
                     }
                 </div>
                 <div className="box-footer">
-                    <h1 onClick={toggleLinks3}>Contato</h1>
+                    <h1 onClick={toggleLinks3}>Contatos</h1>
                     {
                         showLinks3 &&
                         <ul>
@@ -91,24 +92,35 @@ export const Footer = () => {
                         </ul>
                     }
                 </div>
-                <div className="box-footer">
+                <div className="box-footer midia-social">
                     <h1 onClick={toggleLinks4}>Redes Sociais</h1>
                     {
                         showLinks4 &&
                         <ul>
-                            <li>Cupons de desconto</li>
-                            <li>Formas de pagamento</li>
-                            <li>Atendimento</li>
-                            <li>Como Comprar</li>
-                            <li>Trocas e devoluções</li>
-                            <li>Quem somos</li>
-                            <li>Políticas de privacidade</li>
+                            <a href="www.google.com" target='blank'><FaFacebookF /></a>
+                            <a href="www.google.com" target='blank'><FaInstagram /></a>
                         </ul>
                     }
                 </div>
             </div>
             <div className="logotipo">
-                <h1>Simply</h1>
+                <a href="#">
+                    <img src={ logoSimply } alt="logotipo simply - todos os direitos reservados" />
+                </a>
+            </div>
+
+            <div className="info-interprise">
+                <div>
+                    {
+                        cnpjData.cnpj ?
+                        (
+                            <div>{cnpjData.cnpj}</div>
+                        ) :
+                        (
+                            <div>Todos os direitos reservados.</div>
+                        )
+                    }
+                </div>
             </div>
         </div>
     )

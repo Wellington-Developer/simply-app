@@ -27,8 +27,18 @@
 }
 .principal-container__header .mid-side__header {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .principal-container__header .mid-side__header h1 {
+  background: var(--black-color-o2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   text-align: center;
   font-size: 1.25rem;
   color: var(--black-color-o6);
@@ -43,7 +53,7 @@
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 18px;
+  top: 50px;
   right: 15px;
   gap: 12px;
   padding: 10px;

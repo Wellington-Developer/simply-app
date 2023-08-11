@@ -8,6 +8,7 @@ export const GlobalStorage = ({ children }) => {
   const [ cart, setCart ] = useState([])
   const [ refWidth, setRefWidth ] = useState()
   const [ productsCategory, setProductCategory ] = useState()
+  const [ dataProduct, setDataProduct ] = useState()
 
 
   const getAllProducts = () => {
@@ -30,6 +31,10 @@ export const GlobalStorage = ({ children }) => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)
     .then(r => r.json())
     .then(response => setProductCategory(response))
+  }
+
+  const setNewProduct = (array) => {
+    setDataProduct(array)
   }
 
   const setProductToCart = (id) => {
@@ -58,6 +63,6 @@ export const GlobalStorage = ({ children }) => {
   }, [])
 
   return (
-    <GlobalContext.Provider value={ { allProducts, allCategories, setProductToCart, cart, deleteProductToCart, getRefToSetWidthProduct, refWidth, getProductsPerCategory, productsCategory, showPopup } }>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={ { allProducts, allCategories, setProductToCart, cart, deleteProductToCart, getRefToSetWidthProduct, refWidth, getProductsPerCategory, productsCategory, showPopup, setNewProduct, dataProduct } }>{children}</GlobalContext.Provider>
   )
 }

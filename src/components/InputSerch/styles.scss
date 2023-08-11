@@ -1,7 +1,7 @@
 .container-input__search {
   width: 100%;
   position: fixed;
-  top: 90px;
+  top: 150px;
   right: 0px;
   left: 0px;
   
@@ -13,7 +13,7 @@
   }
   
   textarea:focus, input:focus{
-    border: mone;
+    border: none;
     outline: none;
 }
 

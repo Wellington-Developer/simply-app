@@ -8,6 +8,7 @@ import { GlobalContext } from '../context/GlobalContext';
 import { AiFillCreditCard, AiFillStar } from 'react-icons/ai';
 import { BiCartAdd } from 'react-icons/bi';
 import { Popup } from '../Popup';
+import { Testimonials } from '../Testimonials';
 
 export const ProductPage = () => {
   const refWidth = useRef(null)
@@ -130,14 +131,16 @@ export const ProductPage = () => {
                   <h1>Descrição</h1>
                   <p onClick={handleScrollRight}>Ver avaliações</p>
                 </div>
-                <h3>{pro.description}{pro.description}{pro.description}{pro.description}{pro.description}</h3>
+                <h3>{pro.description}</h3>
               </div>
               <div className="right-side">
                 <div className="title">
-                  <h1>Avaliação</h1>
+                  <h1>Avaliações</h1>
                   <p onClick={handleScrollLeft}>Ver descrição</p>
                 </div>
-                <h3>Aqui estarão as avaliações (desenvolvendo essa parte agora)</h3>
+                <div>
+                  <Testimonials />
+                </div>
               </div>
             </div>
           })
