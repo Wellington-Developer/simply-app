@@ -1,8 +1,8 @@
 .info-product__page {
   grid-column: 1/4;
   display: flex;
-  gap: 24px;
-  padding: 180px 0;
+  gap: 48px;
+  padding: 200px 0;
 }
 
 .buttons {
@@ -56,10 +56,47 @@
 
 .left-side__content, .right-side__content {
   flex: 1;
+
+  span {
+    display: block;
+    color: var(--primary-color-o5);
+  }
 }
 
-.left-side__content {
-  height: 90vh;
+.container-img__product {
+  position: relative;
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+  }
+
+  .left-side__content {
+    display: flex;
+    overflow: auto;
+    overflow: hidden;
+    max-width: 668px;
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 40px;
+    position: sticky;
+    top: 180px;
+    scroll-behavior: smooth;
+  
+    
+    
+    img {
+      flex-shrink: 0;
+    }
+  }
+  
 }
 
 .right-side__content .payment-method__info {
@@ -83,20 +120,6 @@
 .right-side__content .box-payment svg {
   width: 28px;
   height: 28px;
-}
-
-.left-side__content a {
-  color: #333;
-  font-weight: bold;
-}
-
-.left-side__content img {
-  max-height: 668px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 40px;
-  position: sticky;
-  top: 120px;
 }
 
 .right-side__content {

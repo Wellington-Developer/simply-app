@@ -7,11 +7,13 @@ import { useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalContext';
 import { AiFillCreditCard, AiFillStar } from 'react-icons/ai';
 import { BiCartAdd } from 'react-icons/bi';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import { Popup } from '../Popup';
 import { Testimonials } from '../Testimonials';
 
 export const ProductPage = () => {
   const refWidth = useRef(null)
+  const imageOffset = useRef(null)
   const { id } = useParams();
   const [ quantity, setQuantity ] = useState(0);
   const [ product, setProduct ] = useState<any>();
@@ -47,6 +49,14 @@ export const ProductPage = () => {
     refWidth.current.scrollLeft += refWidth.current.offsetWidth;
   }
 
+  const handleImageOffsetlLeft = () => {
+    imageOffset.current.scrollLeft -= refWidth.current.offsetWidth;
+  }
+
+  const handleImageOffsetRight = () => {
+    imageOffset.current.scrollLeft += refWidth.current.offsetWidth;
+  }
+
   useEffect(() => {
     filteredProduct(id)
   }, [allProducts])
@@ -59,11 +69,20 @@ export const ProductPage = () => {
         product && product.map((product, index) => {
           return <div className="info-product__page" key={index}>
           <Popup message="Produto adicionado ao carrinho!" show={showPopup}/>
-          <div className="left-side__content">
+          <div className="container-img__product">
+            <div className="left-side__content" ref={ imageOffset }>
+              <img src={product.image}/>
               <img src={product.image} />
+            </div>
+
+            <div className="buttons">
+              <button onClick={ handleImageOffsetlLeft }><AiOutlineArrowLeft /></button>
+              <button onClick={ handleImageOffsetRight }><AiOutlineArrowRight /></button>
+            </div>
           </div>
           <div className="right-side__content">
               <h3 id="price">R$ {product.price}</h3>
+              <span>{product.category}</span>
               <h1>{product.title}</h1>
               <div className="icons">
                   <div className="icons-content">

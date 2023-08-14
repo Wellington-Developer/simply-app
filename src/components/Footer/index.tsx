@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 import { useState, useRef, useEffect } from 'react'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 
 // Data
 import { cnpjData } from './data';
@@ -57,7 +58,14 @@ export const Footer = () => {
         <div className="container-footer" ref={refferenceWidth}>
             <div className="submenu">
                 <div className="box-footer" onClick={toggleLinks}>
-                    <h1 >Institucional</h1>
+                    <div className="top-footer">
+                        <h1 >Institucional</h1>
+                        {
+                            showLinks ?
+                            (<AiOutlineArrowUp />) :
+                            (<AiOutlineArrowDown />)
+                        }
+                    </div>
                     {
                         showLinks &&
                         <ul>
@@ -71,7 +79,14 @@ export const Footer = () => {
                     }
                 </div>
                 <div className="box-footer" onClick={toggleLinks2}>
-                    <h1>Categorias</h1>
+                    <div className="top-footer">
+                        <h1 >Categorias</h1>
+                        {
+                            showLinks ?
+                            (<AiOutlineArrowUp />) :
+                            (<AiOutlineArrowDown />)
+                        }
+                    </div>
                     {
                         showLinks2 &&
                         <ul>
@@ -85,7 +100,14 @@ export const Footer = () => {
                     }
                 </div>
                 <div className="box-footer">
-                    <h1 onClick={toggleLinks3}>Contatos</h1>
+                    <div className="top-footer">
+                        <h1 onClick={toggleLinks3}>Contatos</h1>
+                        {
+                            showLinks3 ?
+                            (<AiOutlineArrowUp />) :
+                            (<AiOutlineArrowDown />)
+                        }
+                    </div>
                     {
                         showLinks3 &&
                         <ul>
@@ -96,7 +118,14 @@ export const Footer = () => {
                     }
                 </div>
                 <div className="box-footer midia-social">
-                    <h1 onClick={toggleLinks4}>Redes Sociais</h1>
+                <div className="top-footer">
+                        <h1 onClick={toggleLinks4}>Redes Sociais</h1>
+                        {
+                            showLinks4 ?
+                            (<AiOutlineArrowUp />) :
+                            (<AiOutlineArrowDown />)
+                        }
+                    </div>
                     {
                         showLinks4 &&
                         <ul>

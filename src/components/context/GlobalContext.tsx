@@ -5,7 +5,7 @@ export const GlobalStorage = ({ children }) => {
   const [ showPopup, setShowPopup] = useState(false);
   const [ allProducts, setAllProducts ] = useState([])
   const [ allCategories, setAllCategories ] = useState()
-  const [ cart, setCart ] = useState([])
+  const [ cart, setCart ] = useState<any>([])
   const [ refWidth, setRefWidth ] = useState()
   const [ productsCategory, setProductCategory ] = useState()
   const [ dataProduct, setDataProduct ] = useState()
@@ -53,20 +53,38 @@ export const GlobalStorage = ({ children }) => {
       }, 5000);
 
       if(!isProductAlready) {
+        localStorage.setItem('cartProducts',
+        JSON.stringify([...cart, product]))
         setCart([...cart, product])
       }
+
   }
 
   const deleteProductToCart = (id: number) => {
     const newCart = cart.filter((item) => item.id !== id)
     setCart(newCart)
+    localStorage.setItem('cartProducts',
+    JSON.stringify(newCart))
   }
+
+  const loadCart = () => {
+    const productsCart: any = JSON.parse(localStorage.getItem('cartProducts'))
+
+    if(productsCart) {
+      setCart(productsCart)
+    } else {
+      setCart([...cart])
+    }
+  }
+
+
 
 
   useEffect(() => {
     getAllProducts()
     getAllCategories()
     userHasBeenAcceptTerms()
+    loadCart()
   }, [])
 
   return (

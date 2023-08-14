@@ -41,7 +41,6 @@ export const Cart = ({ modal } : any) => {
     <div className="section-side__cart">
       <div className="content-side__cart">
         <div className="left-side__cart">
-
           <div className="info-contact__cart">
             <h3>Informações de Entrega</h3>
           </div>

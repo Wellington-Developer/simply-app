@@ -1,5 +1,5 @@
 // Styles
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import './styles.css';
 
 // React Icons
@@ -17,6 +17,7 @@ type IProduct = {
 }
 
 export const Product = ({ title, price, image, id }: IProduct) => {
+
   const { setProductToCart, refWidth, showPopup } = useContext(GlobalContext);
   const widthRecalculedImage = ((refWidth - 72) / 3)
   const style = {
@@ -47,7 +48,7 @@ export const Product = ({ title, price, image, id }: IProduct) => {
               <p>{title}</p>
               <div className="price">
                 <h2>{formatNumber.format(price)}</h2>
-                <a href="#">{formatNumber.format(price - 5)}</a>
+                <p>{formatNumber.format(price - 5)}</p>
               </div>
             </div>
           </Link>

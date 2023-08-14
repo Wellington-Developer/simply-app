@@ -46,9 +46,10 @@
   gap: 12px;
   align-items: center;
 }
-.container-single__product .container-info__product .info-product .price a {
+.container-single__product .container-info__product .info-product .price p {
   color: var(--black-color-o5);
   text-decoration: line-through;
+  font-size: 12px;
 }
 .container-single__product .container-info__product .info-product p {
   font-size: 1.25rem;

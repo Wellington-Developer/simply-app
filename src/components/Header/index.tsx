@@ -89,7 +89,12 @@ export const Header = () => {
           <div className="principal-container__header">
             <div className="left-side__header">
                 <div ref={scope}>
-                    <Menu />
+                    {
+                      isOpen && 
+                      <div onClick={() => setIsOpen(!isOpen)}>
+                        <Menu />
+                      </div>
+                    }
                     <MenuToggle toggle={() => setIsOpen(!isOpen)}/>
                 </div>
             </div>

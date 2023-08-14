@@ -58,9 +58,10 @@
         gap: 12px;
         align-items: center;
 
-        a {
+        p {
           color: var(--black-color-o5);
           text-decoration: line-through;
+          font-size: 12px;
         }
       }
       p {
