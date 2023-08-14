@@ -1,5 +1,5 @@
 // Styles
-import { useContext, useRef } from 'react';
+import { useContext } from 'react';
 import './styles.css';
 
 // React Icons
