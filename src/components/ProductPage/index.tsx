@@ -5,9 +5,9 @@ import './styles.css';
 import { useContext, useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalContext';
-import { AiFillCreditCard, AiFillStar } from 'react-icons/ai';
+import { AiFillStar } from 'react-icons/ai';
 import { BiCartAdd } from 'react-icons/bi';
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
+import { AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineWhatsApp } from 'react-icons/ai'
 import { Popup } from '../Popup';
 import { Testimonials } from '../Testimonials';
 
@@ -50,11 +50,11 @@ export const ProductPage = () => {
   }
 
   const handleImageOffsetlLeft = () => {
-    imageOffset.current.scrollLeft -= refWidth.current.offsetWidth;
+    imageOffset.current.scrollLeft -= (refWidth.current.offsetWidth + 48);
   }
 
   const handleImageOffsetRight = () => {
-    imageOffset.current.scrollLeft += refWidth.current.offsetWidth;
+    imageOffset.current.scrollLeft += (refWidth.current.offsetWidth + 48);
   }
 
   useEffect(() => {
@@ -81,7 +81,10 @@ export const ProductPage = () => {
             </div>
           </div>
           <div className="right-side__content">
-              <h3 id="price">R$ {product.price}</h3>
+              <div className="price-section">
+                <h3 id="price">R$ {product.price}</h3>
+                <h4>{product.price - 5}</h4>
+              </div>
               <span>{product.category}</span>
               <h1>{product.title}</h1>
               <div className="icons">
@@ -96,8 +99,8 @@ export const ProductPage = () => {
               </div>
               <p>{product.description}</p>
               <div className="payment-method__info">
-                  <div className="box-payment"><AiFillCreditCard />10% de desconto para pagamento via PIX</div>
-                  <div className="box-payment"><AiFillCreditCard />10x sem juros no cartão de crédito (ver parcelas)</div>
+                  <div className="box-payment">10% de desconto para pagamento via PIX</div>
+                  <div className="box-payment">10x sem juros no cartão de crédito (ver parcelas)</div>
               </div>
               <div className="select-inputs">
                   <select name="Cor">
@@ -134,7 +137,7 @@ export const ProductPage = () => {
               </div>
               <div className="buttons">
                 <button onClick={ () => setProductToCart(product.id) }>Adicionar ao carrinho<BiCartAdd /></button>
-                <button>Comprar pelo whatsapp</button>
+                <button id="wpp">Comprar pelo whatsapp<AiOutlineWhatsApp /></button>
               </div>
           </div>
       </div>

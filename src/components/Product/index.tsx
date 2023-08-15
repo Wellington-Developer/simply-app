@@ -22,7 +22,7 @@ export const Product = ({ title, price, image, id }: IProduct) => {
   const widthRecalculedImage = ((refWidth - 72) / 3)
   const style = {
     maxWidth: Number(widthRecalculedImage), 
-    height: Number(widthRecalculedImage + 200),
+    height: 500
   }
 
   const options = { style: 'currency', currency: 'BRL' }

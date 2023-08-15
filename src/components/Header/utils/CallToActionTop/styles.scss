@@ -11,3 +11,11 @@
   background: linear-gradient(90deg, rgba(22,20,73,1) 0%, rgba(9,9,121,1) 20%, rgba(0,212,255,1) 96%);
   color: var(--black-color-o1);
 }
+
+@media screen and (max-width: 640px) {
+  .container-info__action {
+    padding: 6px;
+    font-size: 12px;
+    text-align: center;
+  }
+}

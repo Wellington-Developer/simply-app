@@ -86,8 +86,8 @@
             position: relative;
             top: -6px;
             right: 22px;
-            height: 14px;
-            width: 14px;
+            height: 16px;
+            width: 16px;
             border-radius: 5px;
             font-size: 12px;
             display: flex;
@@ -95,6 +95,7 @@
             align-items: center;
             justify-content: center;
             background: var(--primary-color-o5);
+            color: white;
         }
     }
 }

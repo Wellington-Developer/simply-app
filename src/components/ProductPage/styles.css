@@ -2,7 +2,7 @@
   grid-column: 1/4;
   display: flex;
   gap: 48px;
-  padding: 200px 0;
+  padding: 200px 0 30px 0;
 }
 
 .buttons button {
@@ -86,6 +86,7 @@
 }
 .container-img__product .left-side__content img {
   flex-shrink: 0;
+  width: 100%;
 }
 
 .right-side__content .payment-method__info {
@@ -114,9 +115,17 @@
 .right-side__content {
   padding-top: 40px;
 }
+.right-side__content .price-section {
+  display: flex;
+}
+.right-side__content .price-section h4 {
+  text-decoration: line-through;
+  color: var(--primary-color-o5);
+}
 
 .right-side__content #price {
   padding: 10px;
+  margin-right: 8px;
   font-size: 20px;
   color: #FF6F61;
   background: #FFC9C3;
@@ -140,7 +149,7 @@
 
 .select-inputs {
   display: flex;
-  gap: 48px;
+  gap: 24px;
   align-items: center;
   padding: 60px 0;
 }
@@ -184,6 +193,19 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+.buttons #wpp {
+  background: #25D366;
+}
+.buttons #wpp svg {
+  color: white;
+}
+.buttons #wpp:hover {
+  color: white;
+  opacity: 0.8;
+}
+.buttons button {
+  color: white;
 }
 
 .container-info__products {
@@ -233,6 +255,12 @@
 @media screen and (max-width: 834px) {
   .info-product__page {
     flex-direction: column;
+  }
+  .select-inputs {
+    flex-direction: column;
+  }
+  .select-inputs select {
+    width: 100%;
   }
 }
 @media screen and (max-width: 680px) {

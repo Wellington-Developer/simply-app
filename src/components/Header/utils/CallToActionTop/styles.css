@@ -10,4 +10,12 @@
   justify-content: center;
   background: linear-gradient(90deg, rgb(22, 20, 73) 0%, rgb(9, 9, 121) 20%, rgb(0, 212, 255) 96%);
   color: var(--black-color-o1);
+}
+
+@media screen and (max-width: 640px) {
+  .container-info__action {
+    padding: 6px;
+    font-size: 12px;
+    text-align: center;
+  }
 }/*# sourceMappingURL=styles.css.map */
