@@ -63,7 +63,6 @@
 
     .left-side__cart, .right-side__cart {
       flex: 1;
-      height: 100%;
     }
 
     .left-side__cart {
@@ -125,12 +124,21 @@
 @media screen and (max-width: 768px) {
   .section-side__cart {
     position: fixed;
-    padding: 0 20px;
-    top: 80px;
-    bottom: 0;
+    top: 120px;
+    height: 100%;
+    z-index: 99999999;
     .content-side__cart {
+      border: 1px solid red;
+      padding: 0 20px;
       flex-direction: column;
       overflow: auto;
+      width: 100%;
+    }
+  }
+
+  .right-side__cart {
+    .quicly-resume__cart {
+      width: 100%;
     }
   }
 }

@@ -50,11 +50,11 @@ export const ProductPage = () => {
   }
 
   const handleImageOffsetlLeft = () => {
-    imageOffset.current.scrollLeft -= (refWidth.current.offsetWidth + 48);
+    imageOffset.current.scrollLeft -= (refWidth.current.offsetWidth + 100);
   }
 
   const handleImageOffsetRight = () => {
-    imageOffset.current.scrollLeft += (refWidth.current.offsetWidth + 48);
+    imageOffset.current.scrollLeft += (refWidth.current.offsetWidth + 100);
   }
 
   useEffect(() => {

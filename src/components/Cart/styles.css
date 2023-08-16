@@ -57,7 +57,6 @@
 }
 .section-side__cart .content-side__cart .left-side__cart, .section-side__cart .content-side__cart .right-side__cart {
   flex: 1;
-  height: 100%;
 }
 .section-side__cart .content-side__cart .left-side__cart .form {
   padding-bottom: 48px;
@@ -97,12 +96,18 @@
 @media screen and (max-width: 768px) {
   .section-side__cart {
     position: fixed;
-    padding: 0 20px;
-    top: 80px;
-    bottom: 0;
+    top: 120px;
+    height: 100%;
+    z-index: 99999999;
   }
   .section-side__cart .content-side__cart {
+    border: 1px solid red;
+    padding: 0 20px;
     flex-direction: column;
     overflow: auto;
+    width: 100%;
+  }
+  .right-side__cart .quicly-resume__cart {
+    width: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */

@@ -1,18 +1,20 @@
 // Styles
 import { Link } from 'react-router-dom'
 import './styles.css'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useContext } from 'react'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
 // Data
 import { cnpjData } from './data';
 
 // Images
 import logoSimply from '../../assets/logo.png';
+import { GlobalContext } from '../context/GlobalContext';
 
 export const Footer = () => {
     const refferenceWidth = useRef(null);
+    const global = useContext(GlobalContext)
 
     const handleFooterMenu = () => {
         if(refferenceWidth.current.offsetWidth <= 600) {
@@ -62,8 +64,8 @@ export const Footer = () => {
                         <h1 >Institucional</h1>
                         {
                             showLinks ?
-                            (<AiOutlineArrowUp />) :
-                            (<AiOutlineArrowDown />)
+                            (<IoIosArrowUp />) :
+                            (<IoIosArrowDown />)
                         }
                     </div>
                     {
@@ -82,20 +84,22 @@ export const Footer = () => {
                     <div className="top-footer">
                         <h1 >Categorias</h1>
                         {
-                            showLinks ?
-                            (<AiOutlineArrowUp />) :
-                            (<AiOutlineArrowDown />)
+                            showLinks2 ?
+                            (<IoIosArrowUp />) :
+                            (<IoIosArrowDown />)
                         }
                     </div>
                     {
                         showLinks2 &&
                         <ul>
-                            <li>30% OFF</li>
-                            <li>Novidades</li>
-                            <li>Ultimas peças</li>
-                            <li>Conjuntos</li>
-                            <li>Saias</li>
-                            <li>Vestidos</li>
+                            {
+                                global.allCategories &&
+                                global.allCategories.map((item, index) => {
+                                    return <Link to={`/category/${item}`}>
+                                        <li>{item}</li>
+                                    </Link>
+                                })
+                            }
                         </ul>
                     }
                 </div>
@@ -104,8 +108,8 @@ export const Footer = () => {
                         <h1 onClick={toggleLinks3}>Contatos</h1>
                         {
                             showLinks3 ?
-                            (<AiOutlineArrowUp />) :
-                            (<AiOutlineArrowDown />)
+                            (<IoIosArrowUp />) :
+                            (<IoIosArrowDown />)
                         }
                     </div>
                     {
@@ -122,8 +126,8 @@ export const Footer = () => {
                         <h1 onClick={toggleLinks4}>Redes Sociais</h1>
                         {
                             showLinks4 ?
-                            (<AiOutlineArrowUp />) :
-                            (<AiOutlineArrowDown />)
+                            (<IoIosArrowUp />) :
+                            (<IoIosArrowDown />)
                         }
                     </div>
                     {
@@ -136,9 +140,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="logotipo">
-                <a href="#">
                     <img src={ logoSimply } alt="logotipo simply - todos os direitos reservados" />
-                </a>
             </div>
 
             <div className="info-interprise">
