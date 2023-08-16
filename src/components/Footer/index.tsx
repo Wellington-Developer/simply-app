@@ -95,7 +95,7 @@ export const Footer = () => {
                             {
                                 global.allCategories &&
                                 global.allCategories.map((item, index) => {
-                                    return <Link to={`/category/${item}`}>
+                                    return <Link to={`/category/${item}`} key={index}>
                                         <li>{item}</li>
                                     </Link>
                                 })
