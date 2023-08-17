@@ -6,7 +6,6 @@
 .principal-container__banner .banners {
   display: flex;
   cursor: pointer;
-  gap: 24px;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -39,31 +38,23 @@
 }
 
 .button-product__banner {
-  position: absolute;
-  right: 0;
-  display: flex;
-  gap: 24px;
-}
-.button-product__banner button {
-  margin-top: 20px;
-  padding: 12px;
-  border-radius: 5px;
-  background: var(--primary-color-o2);
-  border: none;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  transition: all 0.6s ease-in-out;
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
 }
-.button-product__banner button svg {
-  color: var(--primary-color-o5);
-}
-.button-product__banner button:hover {
+.button-product__banner .dot-banner {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: var(--primary-color-o3);
   cursor: pointer;
-  background: var(--primary-color-o5);
 }
-.button-product__banner button:hover svg {
-  color: var(--primary-color-o1);
+.button-product__banner .dot-banner.active {
+  cursor: pointer;
+  width: 30px;
+  border-radius: 5px;
+  background: var(--primary-color-o5);
 }
 
 @media screen and (max-width: 834px) {
