@@ -2,7 +2,7 @@
 import './styles.css';
 
 // React Hooks
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 
 // React Component
 import { Banner } from './Utils/Banner';
@@ -10,13 +10,11 @@ import { Banner } from './Utils/Banner';
 export const BannerContainer = () => {
     const carousel = useRef<HTMLDivElement>(null)
 
-    const [ classActive, setClassActive ] = useState('')
 
     const handleClickIndexImage = (index) => {
         const indexedImage = index * carousel.current!.offsetWidth
         console.log(indexedImage)
         carousel && (carousel.current!.scrollLeft = indexedImage)
-        setClassActive("active")
     }
 
     const linkImages = ["https://casamobilia.simply.app.br/arquivo_back/9155/banner/5399d3b4e1c769b23e4caa9f5b0917f820230721174635.webp", "https://casamobilia.simply.app.br/arquivo_back/9155/banner/fb3118396607bf3d70271ee61a5b6dd720230721174610.webp", "https://casamobilia.simply.app.br/arquivo_back/9155/banner/fb3118396607bf3d70271ee61a5b6dd720230721174610.webp"]
